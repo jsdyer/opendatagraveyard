@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17201c">
+<title>Open Data Graveyard · CoolCode</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js" type="module"></script>
+</head>
+<body>
+<a class="skip" href="#search">Skip to search</a>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="https://coolcode.ca/"><strong aria-hidden="true">&gt;_</strong>CoolCode.ca</a>
+<nav aria-label="Project navigation"><a href="#search">Search</a><a href="#source">Data and sources</a><a href="https://github.com/jsdyer/opendatagraveyard">GitHub ↗</a></nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div><p class="eyebrow">Catalogue removals · Canada</p><h1>Open Data Graveyard<span>.</span></h1><p>Follow the paper trail of datasets removed from Canada’s Open Government Portal. Search the deletion log and look for archived pages or newer listings.</p></div>
+  <div class="hero-stat"><strong id="total">—</strong><span>deletion log entries</span></div>
+</div></section>
+<div class="wrap workspace">
+  <section class="panel" id="search" aria-label="Search records">
+   <form id="search-form" role="search">
+    <label for="query">Search deleted records</label>
+    <div class="query-row"><input type="search" id="query" placeholder="Try water quality, census, or a record ID" autocomplete="off" maxlength="240"><button type="button" id="clear" class="btn secondary">Clear</button></div>
+    <div class="chips" id="suggestions" aria-label="Example searches"><span>Try</span><button type="button" data-q="water quality">water quality</button><button type="button" data-q="census">census</button><button type="button" data-q="old growth">old growth</button><button type="button" data-q="transport">transport</button></div>
+    <div class="filters">
+      <label>Organization<select id="org"><option value="">All organizations</option></select></label>
+      <label>Year removed<select id="year"><option value="">All years</option></select></label>
+      <label>Month removed<select id="facet"><option value="">All months</option></select></label>
+      <label>Sort by<select id="sort"><option value="relevance">Best match</option><option value="latest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
+    </div>
+   </form>
+  </section>
+  <div class="layout">
+    <section aria-labelledby="result-heading">
+      <div class="results-head"><div><h2 id="result-heading" tabindex="-1">Removed entries</h2><p id="count" class="stamp" role="status">Loading snapshot…</p></div><button id="surprise" class="btn secondary" disabled>Surprise me</button></div>
+      <div id="results"></div>
+      <div class="pagination" id="pages" hidden><button class="btn secondary" id="prev">Previous</button><span id="page" class="stamp"></span><button class="btn secondary" id="next">Next</button></div>
+    </section>
+    <aside>
+      <section class="panel"><p class="eyebrow">Timeline</p><h2>Removals by year</h2><div id="summary"></div><p>Choose a year to browse removals within it. The log records catalogue changes and does not state why the records were removed.</p></section>
+      <section class="panel" id="source"><p class="eyebrow">Provenance</p><h2>About this snapshot</h2>
+        <p id="snapshot" class="stamp">Publisher and build dates load with the data.</p><p>The government log provides titles, organizations, removal timestamps and IDs. Archival and current search links are leads to check, with no guarantee that a copy exists.</p>
+        <a href="https://open.canada.ca/data/en/dataset/2916fad5-ebcc-4c86-b0f3-4f619b29f412">Government source ↗</a><a href="https://open.canada.ca/data/dataset/2916fad5-ebcc-4c86-b0f3-4f619b29f412/resource/d22d2aca-155b-4978-b5c1-1d39837e1993/download/deleted.csv">Download deletion log (CSV) ↗</a><a href="https://coolcode.ca/datasetexplorer/">Explore the current catalogue ↗</a>
+      </section>
+    </aside>
+  </div>
+</div>
+</main>
+<footer><div class="wrap stamp">Source: Treasury Board of Canada Secretariat. Contains information licensed under the <a href="https://open.canada.ca/en/open-government-licence-canada">Open Government Licence – Canada</a>. An independent CoolCode project.</div></footer>
+<dialog id="detail" aria-labelledby="detail-title">
+<div class="dialog-head"><div><p class="eyebrow">Deletion log entry</p><h2 id="detail-title"></h2></div><form method="dialog"><button class="btn secondary">Close</button></form></div>
+<div class="dialog-body" id="detail-body"></div>
+</dialog>
+</body>
+</html>

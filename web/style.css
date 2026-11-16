@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light; --ink:#17201c; --paper:#f0efdf; --surface:#fcfbf2; --lime:#c4ed89;
+  --muted:#506056; --line:#b9bba9; --deep:#25372e; --accent:#416635;
+  --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --mono:ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+* {box-sizing:border-box}
+body {margin:0;font:1rem/1.6 var(--sans);background:var(--paper);color:var(--ink)}
+a {color:inherit;text-underline-offset:.16em}
+button,select,input {font:inherit;color:inherit}
+button {cursor:pointer}
+button:disabled {cursor:default;opacity:.45}
+[hidden] {display:none!important}
+:focus-visible {outline:3px solid #bb681d;outline-offset:3px}
+.wrap {width:min(77rem,92vw);margin-inline:auto}
+.skip {position:absolute;top:-10rem;left:1rem;background:#fff;padding:.5rem 1rem;z-index:5}
+.skip:focus {top:.5rem}
+.topbar {background:#101814;color:#e7efdc}
+.topbar .wrap {display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:3.6rem}
+.brand {font-weight:800;text-decoration:none;letter-spacing:-.04em}
+.brand strong {display:inline-grid;place-items:center;width:1.85rem;height:1.4rem;margin-right:.45rem;background:var(--lime);color:var(--ink);font:.8rem var(--mono)}
+.topbar nav {display:flex;gap:1.05rem;font:.74rem var(--mono)}
+.hero {background-color:var(--ink);background-image:radial-gradient(#bbd7a827 .9px,transparent .9px);background-size:18px 18px;color:#f5f3e6;border-bottom:.24rem solid #73876d}
+.hero .wrap {display:grid;grid-template-columns:minmax(0,1fr) 14rem;gap:2rem;padding-block:clamp(2rem,6vw,5.2rem);align-items:end}
+.eyebrow {margin:0 0 .5rem;font:700 .72rem var(--mono);text-transform:uppercase;letter-spacing:.16em;color:var(--accent)}
+.hero .eyebrow {color:var(--lime)}
+h1,h2,h3,p {margin:0}
+h1 {font-size:clamp(2.75rem,6.9vw,5.2rem);font-weight:760;letter-spacing:-.065em;line-height:.96;max-width:15ch}
+h1 span {color:var(--lime)}
+.hero p:not(.eyebrow) {max-width:38rem;margin-top:1.15rem;color:#d9e1d3}
+.hero-stat {border:1px solid #68816c;background:#1c2b23;padding:.9rem 1.1rem;align-self:end}
+.hero-stat strong {display:block;color:var(--lime);font:700 clamp(1.65rem,3.3vw,2.55rem) var(--mono);letter-spacing:-.08em}
+.hero-stat span {color:#ccdac6;font:.71rem/1.45 var(--mono)}
+.workspace {padding:1.2rem 0 3.3rem}
+.panel {background:var(--surface);border:1px solid var(--line);padding:clamp(.85rem,2vw,1.35rem)}
+form {margin:0}
+label {display:block;font:700 .76rem/1.45 var(--mono);color:#354a3a}
+input,select {background:#fffef7;border:1px solid #9da69a;border-radius:.15rem;min-height:2.65rem;padding:.5rem .6rem;width:100%}
+#query {font-size:1.05rem}
+.query-row {display:flex;gap:.5rem;margin:.4rem 0 .75rem}
+.btn {background:var(--lime);border:1px solid #74965b;border-radius:.15rem;padding:.4rem .75rem;font:700 .77rem/1.4 var(--mono);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn:hover:not(:disabled) {background:#d3f8a8}
+.btn.secondary {background:var(--surface);border-color:#93a28e}
+.btn.secondary:hover:not(:disabled) {background:#e9f0de}
+.filters {display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:.7rem;margin-top:1rem}
+.filters select {display:block;margin-top:.22rem;font-size:.83rem}
+.chips {display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.chips span {font:.72rem var(--mono);color:var(--muted)}
+.chips button,.tag {border:1px solid #bac6b4;background:#e9efdf;border-radius:5rem;padding:.18rem .56rem;font:650 .7rem var(--mono)}
+.chips button:hover {background:var(--lime)}
+.stamp {font:.77rem/1.6 var(--mono);color:var(--muted)}
+.layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(13rem,17.5rem);gap:1.2rem;margin-top:1.25rem}
+.results-head {display:flex;justify-content:space-between;align-items:end;gap:.65rem;margin-bottom:.65rem}
+h2 {font-size:clamp(1.4rem,3vw,2rem);line-height:1.1;letter-spacing:-.048em}
+h3 {font-size:1.12rem;letter-spacing:-.023em;line-height:1.22}
+#results {display:grid;gap:.52rem}
+article.card {padding:.86rem 1rem;border:1px solid var(--line);background:var(--surface)}
+article.card:hover {border-color:#758873}
+article.card .meta {font:.7rem/1.4 var(--mono);color:var(--muted);margin-bottom:.25rem}
+article.card button {border:0;background:none;text-align:left;font:inherit;font-weight:700;line-height:inherit;padding:0;text-decoration:underline;text-decoration-color:#96a896;text-underline-offset:.18em}
+article.card .chips {margin-top:.58rem}
+aside .panel+ .panel {margin-top:.7rem}
+aside h2 {font-size:1.25rem;margin-bottom:.5rem}
+aside p {font-size:.84rem;margin-top:.6rem;color:var(--muted)}
+aside a {display:block;margin-top:.45rem;font:.76rem var(--mono)}
+#summary {display:grid;gap:.35rem}
+.statline {font:.75rem var(--mono);display:flex;justify-content:space-between;gap:.7rem;align-items:center;background:#e9ecdd;border:0;text-align:left;padding:.3rem .45rem}
+.statline:hover {background:var(--lime)}
+.pagination {display:flex;justify-content:space-between;align-items:center;gap:.7rem;margin-top:1rem}
+.note {padding:.5rem 0}
+footer {border-top:1px solid var(--line);padding:1.4rem 0 2rem;color:var(--muted)}
+footer a {font-weight:650}
+dialog {color:var(--ink);background:var(--surface);border:1px solid #7f8d7e;border-radius:.2rem;padding:0;max-width:49rem;width:calc(100vw - 1.25rem);max-height:89vh;box-shadow:0 1rem 5rem #0006}
+dialog::backdrop {background:#0c160db0}
+.dialog-head {position:sticky;top:0;background:var(--surface);display:flex;gap:1rem;justify-content:space-between;align-items:start;border-bottom:1px solid var(--line);padding:1rem 1.2rem;z-index:1}
+.dialog-head h2 {font-size:1.45rem;line-height:1.22}
+.dialog-body {padding:1rem 1.2rem 1.4rem;overflow-wrap:anywhere}
+.dialog-body p {margin-bottom:.65rem}
+.dialog-body h3 {margin:1rem 0 .35rem}
+.dialog-body ul {list-style:none;padding:0;display:grid;gap:.45rem}
+.dialog-body li {padding:.6rem .7rem;border:1px solid var(--line)}
+.dialog-body li span {display:block}
+.dialog-actions {display:flex;flex-wrap:wrap;gap:.45rem;margin:.7rem 0}
+#dialog-status {min-height:1em;margin:.3rem 0 0}
+@media (max-width:760px) {
+  .hero .wrap {grid-template-columns:1fr;gap:.85rem}
+  .hero-stat {justify-self:start}
+  .layout {grid-template-columns:1fr}
+  .filters {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:420px) {
+  .topbar nav a:last-child {display:none}
+  .btn {padding:.35rem .45rem}
+  .results-head {align-items:start}
+}

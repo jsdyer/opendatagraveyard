@@ -209,7 +209,9 @@ async function openDetail(row) {
     const subject = new URLSearchParams({search_text:title});
     const tools = node("div",undefined,"dialog-actions");
     const archived = `https://web.archive.org/web/*/https://open.canada.ca/data/en/dataset/${encodeURIComponent(id)}`;
-    append(tools,link("Wayback Machine ↗",archived,"btn secondary"),
+    const ghostQuery = new URLSearchParams({url:formatDetail(row)});
+    append(tools,link("Research this URL in Ghost Links ↗",`https://coolcode.ca/ghostlinks/#${ghostQuery}`,"btn secondary"),
+      link("Wayback Machine ↗",archived,"btn secondary"),
       link("Search the current portal ↗",`https://search.open.canada.ca/opendata/?${subject}`,"btn secondary"),
       link("Find related records on CoolCode ↗",`https://coolcode.ca/datasetexplorer/#${new URLSearchParams({q:title.slice(0,240)})}`,"btn secondary"));
     body.append(node("h3","Follow the record"),node("p","These lookups can help find earlier captures or newer releases. A removal entry only records a catalogue change."),tools);

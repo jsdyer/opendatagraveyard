@@ -1,0 +1,21 @@
+{
+  "id": "opendatagraveyard",
+  "title": "The Open Data Graveyard",
+  "description": "Investigate datasets removed from the federal catalogue.",
+  "category": "explorers",
+  "tags": [
+    "deleted",
+    "archive",
+    "datasets"
+  ],
+  "icon": "archive-x",
+  "url": "/opendatagraveyard/",
+  "source": "https://github.com/jsdyer/opendatagraveyard",
+  "hosting": "project",
+  "access": "browser",
+  "data_info": {
+    "mode": "snapshot",
+    "detail": "Treasury Board lists records removed from the federal open-data portal.",
+    "cadence": "Daily"
+  }
+}
